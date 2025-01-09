@@ -18,12 +18,12 @@ TARGETDIR = bin
 ifeq ($(BUILD_TYPE), debug)
     CXXFLAGS = $(CXXFLAGS_COMMON) -Wextra -Wpedantic -Wconversion -O0 -g
     OBJDIR = obj/debug
-		TARGETDIR = bin/debug
+	TARGETDIR = bin/debug
     TARGET = $(TARGETDIR)/main
 else
     CXXFLAGS = $(CXXFLAGS_COMMON) -O3
     OBJDIR = obj/release
-		TARGETDIR = bin/release
+	TARGETDIR = bin/release
     TARGET = $(TARGETDIR)/main
 endif
 
@@ -43,6 +43,13 @@ r:
 	make all BUILD_TYPE=release
 
 al: d r
+
+# 快捷运行
+runr:
+	@./bin/release/main
+
+rund:
+	@./bin/debug/main
 
 # 生成可执行文件
 $(TARGET): $(OBJS)

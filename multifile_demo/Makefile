@@ -6,7 +6,7 @@ CXXFLAGS_COMMON = -std=c++17 -Wall
 
 # 第三方库
 LDFLAGS = -lpthread
-CPPFLAGS = 
+CPPFLAGS = -I ../external/fmt/include
 # LDFLAGS = -L/path/to/libexample/ -lexample
 # CPPFLAGS = -I/path/to/libexample/include
 
