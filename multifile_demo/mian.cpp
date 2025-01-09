@@ -15,7 +15,7 @@ void doWork(std::shared_ptr<AbstractDrinking> drink)
 void makeCoffee()
 {
   fmt::println("======= 制作咖啡饮料:");
-  std::shared_ptr<Coffee> coffee = std::make_shared<Coffee>();
+  std::shared_ptr<AbstractDrinking> coffee = std::make_shared<Coffee>();
   doWork(coffee);
 }
 
