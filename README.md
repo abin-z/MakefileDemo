@@ -1,5 +1,5 @@
 # MakefileDemo
-### 一个用于简单项目的Makefile的模板
+### 一个用于简单项目的Makefile模板
 根目录下的Makefile.bak是一个基本Makefile模板, 适用于简单的Demo代码
 
 - Makefile简单通用, 非常适合demo代码
@@ -8,8 +8,11 @@
 - 可以根据模板进行自定义或改进
 
 **基本使用步骤** 
+
 1. 新建一个文件夹, 例如`hello_demo`.
+
 2. 将`Makefile.bak`复制到新建文件夹(hello_demo)中, 并删除`.bak`后缀.
+
 3. 新建一个`main.cpp`文件, 写打印hello的代码.
     ```cpp
     #include <iostream>
@@ -18,6 +21,7 @@
       std::cout << "hello makefile.\n";
     }
     ```
+    
 4. 然后当前文件夹`hello_demo/`的命令行中输入`make`, 就会进入构建过程.
     ```sh
     [user@ubuntu hello_demo]$ make 
@@ -27,12 +31,18 @@
     g++ obj/debug/main.o -o bin/debug/main -lpthread
     [user@ubuntu hello_demo]$ 
     ```
+    
+    - 执行` make r `构建release版本, 执行` make d `构建debug版本, 执行` make al `构建debug和release版本.
+    
 5. 可以看到生成了可执行文件main,执行`./bin/debug/main`命令即可运行
     ```sh
     [user@ubuntu hello_demo]$ ./bin/debug/main 
     hello makefile.
     [user@ubuntu hello_demo]$ 
     ```
+    
+    - 快捷执行指令: `make runr`执行release版本程序,  `make rund`执行debug版本程序.
+    
 6. 可以观察现在的目录架构如下:
    ```sh
     [user@ubuntu makefileDemo]$ tree hello_demo/
@@ -45,7 +55,10 @@
     └── obj
         └── debug
             └── main.o
-
+   
     4 directories, 4 files
     [user@ubuntu hello_demo]$ 
    ```
+   
+7. 清除操作: `make clean`
+
